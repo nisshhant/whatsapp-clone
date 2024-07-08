@@ -1,8 +1,8 @@
 import { useContext } from "react";
 import { AccountContext } from "../../../context/AccountProvider";
 import { Box, styled } from "@mui/material";
-import {Chat as MessageIcon, MoreVert, Search } from "@mui/icons-material";
-import SearchBar from "./Search";
+import {Chat as MessageIcon} from "@mui/icons-material";
+import HeaderMenu from "./HeaderMenu";
 
 
 const Component = styled(Box)`
@@ -47,11 +47,10 @@ const Header = () => {
         <Wrapped>
         <MessageIcon/>
         
-        <MoreVert/>
+        <HeaderMenu/>
         </Wrapped>
         
     </Component>
-    <Box><SearchBar/></Box>
        
     </>)
     

@@ -10,7 +10,6 @@ function App() {
     <AccountProvider>
     <Messenger/>
     </AccountProvider>
-    
     </GoogleOAuthProvider>
     </>
   )
