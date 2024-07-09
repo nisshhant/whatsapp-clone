@@ -29,6 +29,7 @@ margin-bottom : 25px;
 `
 
 
+
 const Dialogstyle= {
     height: '90%',
     marginTop : '20%',

@@ -1,38 +1,47 @@
 import { useState } from "react";
 
 import { MoreVert } from "@mui/icons-material";
-import { Menu, MenuItem } from "@mui/material";
+import { Menu, MenuItem, styled } from "@mui/material";
+
+const MenuOption = styled(MenuItem)`
+    font-size: 14px;
+    padding: 15px 60px 5px 24px;
+    color: #4A4A4A;
+`;
 
 const HeaderMenu = () => {
-  const [open, setOpen ] = useState(false);
+  const [open, setOpen] = useState(null);
   const handleClose = () => {
     setOpen(null);
-  }
-  const handlecLick = (e) => {
-    setOpen(e.curren tTarget);
-  }
+  };
+  const handleClick = (e) => {
+    setOpen(e.currentTarget);
+  };
   return (
-    <div><MoreVert onclick = {handlecLick}/>
+    <div>
+      <MoreVert onClick={handleClick} />
       <Menu
         anchorEl={open}
         keepMounted
-        open={open}
+        open={Boolean(open)}
         onClose={handleClose}
-        getConentAnchorE1 = {null}
-        anchorOrigin={{vertical:"bottom",
-          horizontal : "center"
-        }}
+        getContentAnchorEl={null}
+        anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
         MenuListProps={{
           'aria-labelledby': 'basic-button',
         }}
+      transformOrigin={{
+        vertical: "top",
+        horizontal : "right",
+      }}
+      
       >
-        <MenuItem onClick={handleClose}>Profile</MenuItem>
-        <MenuItem onClick={handleClose}>My account</MenuItem>
-        <MenuItem onClick={handleClose}>Logout</MenuItem>
+        <MenuOption onClick={handleClose}>Profile</MenuOption>
+        <MenuOption onClick={handleClose}>My account</MenuOption>
+        <MenuOption onClick={handleClose}>Logout</MenuOption>
       </Menu>
     </div>
+  );
+};
 
-  )
-
-}
 export default HeaderMenu;

@@ -15,6 +15,7 @@ align-items : center;
 `
 const Wrapped = styled(Box)`
 margin-left : auto; 
+display : flex;
 & > * {
 margin-left : 10px;
 padding : 8px;
@@ -46,7 +47,6 @@ const Header = () => {
         <Image src = {account.picture} alt ="dp"/>
         <Wrapped>
         <MessageIcon/>
-        
         <HeaderMenu/>
         </Wrapped>
         
